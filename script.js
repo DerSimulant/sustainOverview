@@ -8,8 +8,30 @@ document.addEventListener("DOMContentLoaded", function() {
         infoText.innerHTML = text; // Nutze innerHTML, um HTML-Inhalt zu setzen
         infoPanel.classList.remove("hidden");
         infoPanel.style.display = "block";
-        infoPanel.style.left = event.pageX + "px";
-        infoPanel.style.top = event.pageY + "px";
+
+        // Berechne die Info-Box Dimensionen und Fenstergrößen
+        const panelHeight = infoPanel.offsetHeight;
+        const panelWidth = infoPanel.offsetWidth;
+        const windowHeight = window.innerHeight;
+        const windowWidth = window.innerWidth;
+
+        // Setze Standard-Positionierung basierend auf Klick-Position
+        let left = event.pageX;
+        let top = event.pageY;
+
+        // Überprüfe, ob die Info-Box am unteren Rand abgeschnitten wird
+        if ((top + panelHeight) > windowHeight) {
+            top -= panelHeight; // Info-Box nach oben verschieben
+        }
+
+        // Überprüfe, ob die Info-Box am rechten Rand abgeschnitten wird
+        if ((left + panelWidth) > windowWidth) {
+            left -= panelWidth; // Info-Box nach links verschieben
+        }
+
+        // Setze die angepassten Positionen
+        infoPanel.style.left = left + "px";
+        infoPanel.style.top = top + "px";
     }
 
     // Funktion zum Ausblenden des Info-Panels
