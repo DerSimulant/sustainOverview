@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"> <!-- Ermöglicht das Zoomen -->
+    <title>Interaktive Überview
+
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="textContent.js"></script> <!-- Neue JavaScript-Datei -->
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <!-- SVG direkt im HTML eingebunden -->
+    <div class="svg-container">
+        <!-- Füge hier deine SVG ein oder verlinke sie -->
+        <object id="interactive-svg" type="image/svg+xml" data="CSRD_Grundlagenseminar_with_ids.svg" width="100%" height="600">
+            Ihr Browser unterstützt keine SVG-Dateien.
+        </object>
+    </div>
+
+    <!-- Div für zusätzliche Informationen -->
+    <div id="info-panel" class="hidden">
+        <p id="info-text"></p>
+    </div>
+
+    
+</body>
+</html>
